@@ -54,7 +54,7 @@ function getAlbumItem(album) {
 }
 
 function getPhotoItem(photo) {
-    return `<div class="card" album-id = "${photo.albumId} "id="${photo.id}"><img src="${photo.url}" class="card-img-top" alt="..."><div class="card-body"><p class="card-text">${photo.title}</p></div></div>`;
+    return `<div class="card" album-id = "${photo.albumId} "id="${photo.id}"><img src="${photo.url}" class="card-img-top" alt="..."></div>`;
 }
 
 //REQUESTS
