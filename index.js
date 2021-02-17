@@ -19,7 +19,7 @@ function getAlbums() {
 function setActive() {
     const list = Array.from(albumsList.querySelectorAll('.js-album'));
     const album = list[0];
-    album.classList.toggle('active-album');
+    album.classList.add('active-album');
     getActiveAlbum(list);
 }
 
@@ -84,9 +84,7 @@ function renderPhotos(response) {
 function clearActive() {
     const list = Array.from(albumsList.querySelectorAll('.js-album'));
     for (let i = 0; i < list.length; i++) {
-        if (list[i].classList.contains('active-album')) {
-            list[i].classList.toggle('active-album');
-        }
+        list[i].classList.remove('active-album');
     }
 }
 
