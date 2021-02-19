@@ -16,19 +16,10 @@ function getAlbums() {
     });
 }
 
-function setActive() {
+function getFirstAlbum() {
     const list = Array.from(albumsList.querySelectorAll('.js-album'));
     const album = list[0];
-    album.classList.add('active-album');
-    getActiveAlbum(list);
-}
-
-function getActiveAlbum(list) {
-    for (let i = 0; i < list.length; i++) {
-        if (list[i].classList.contains('active-album')) {
-            getPhotos(list[i].id);
-        }
-    }
+    getPhotos(album.id);
 }
 
 function getPhotos(albumID) {
@@ -41,7 +32,6 @@ function getPhotos(albumID) {
 function createAlbumEventListener() {
     albumsList.addEventListener('click', (event) => {
         if (event.target.classList.contains('js-album')) {
-            clearActive();
             clearGallery();
             getPhotos(event.target.id);
         }
@@ -81,17 +71,10 @@ function renderPhotos(response) {
 }
 
 //CLEAR
-function clearActive() {
-    const list = Array.from(albumsList.querySelectorAll('.js-album'));
-    for (let i = 0; i < list.length; i++) {
-        list[i].classList.remove('active-album');
-    }
-}
 
 function clearGallery() {
     gallery.innerHTML = '';
 }
-
 
 //INIT
 
