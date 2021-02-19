@@ -60,9 +60,8 @@ function sendPhotosRequest(albumID) {
 
 //RENDER
 function renderAlbums(response) {
-    const album = response.map(album => getAlbumItem(album));
-    albumsList.insertAdjacentHTML('beforeend', album.join(''));
-    setActive()
+    const albums = response.map(album => getAlbumItem(album));
+    albumsList.insertAdjacentHTML('beforeend', albums.join(''));
 }
 
 function renderPhotos(response) {
