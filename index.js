@@ -13,7 +13,9 @@ function getAlbums() {
     const request = sendAlbumsRequest();
     request.then((response) => {
         renderAlbums(response);
+        getFirstAlbum();
     });
+
 }
 
 function getFirstAlbum() {
