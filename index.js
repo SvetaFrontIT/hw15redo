@@ -62,7 +62,6 @@ function sendPhotosRequest(albumID) {
 function renderAlbums(response) {
     const album = response.map(album => getAlbumItem(album));
     albumsList.insertAdjacentHTML('beforeend', album.join(''));
-    setActive()
 }
 
 function renderPhotos(response) {
