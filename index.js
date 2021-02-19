@@ -13,7 +13,9 @@ function getAlbums() {
     const request = sendAlbumsRequest();
     request.then((response) => {
         renderAlbums(response);
+        getFirstAlbum();
     });
+
 }
 
 function getFirstAlbum() {
@@ -60,8 +62,8 @@ function sendPhotosRequest(albumID) {
 
 //RENDER
 function renderAlbums(response) {
-    const album = response.map(album => getAlbumItem(album));
-    albumsList.insertAdjacentHTML('beforeend', album.join(''));
+    const albums = response.map(album => getAlbumItem(album));
+    albumsList.insertAdjacentHTML('beforeend', albums.join(''));
 }
 
 function renderPhotos(response) {
