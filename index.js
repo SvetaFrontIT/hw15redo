@@ -59,7 +59,6 @@ function sendPhotosRequest(albumID) {
     return fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumID}`).then((response) => response.json());
 }
 
-
 //RENDER
 function renderAlbums(response) {
     const albums = response.map(album => getAlbumItem(album));
